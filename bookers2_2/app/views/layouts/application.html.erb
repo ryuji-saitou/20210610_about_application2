@@ -21,43 +21,43 @@
             <% if user_signed_in? %>
               <li>
                 <%= link_to user_path(current_user.id), class:"text-light nav-link fas fa-home" do %>
-                   Home
+                  Home
                 <% end %>
               </li>
               <li>
                 <%= link_to users_path, class:"text-light nav-link fas fa-users" do %>
-                   Users
+                  Users
                 <% end %>
               </li>
               <li>
                 <%= link_to books_path, class:"text-light nav-link fas fa-book-open" do %>
-                   Books
+                  Books
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete, class:"text-light nav-link fas fa-sign-out-alt" do %>
-                   log out
+                  logout
                 <% end %>
               </li>
             <% else %>
               <li>
                 <%= link_to root_path, class:"text-light nav-link fas fa-home" do %>
-                   Home
+                  Home
                 <% end %>
               </li>
               <li>
-                <%= link_to about_path, class:"text-light nav-link fas fa-link" do %>
-                   About
+                <%= link_to home_about_path, class:"text-light nav-link fas fa-link" do %>
+                  About
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_registration_path, class:"text-light nav-link fas fa-user-plus" do %>
-                   sign up
+                  Sign Up
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_session_path, class:"text-light nav-link fas fa-sign-in-alt" do %>
-                   log in
+                  login
                 <% end %>
               </li>
             <% end %>
@@ -66,6 +66,7 @@
       </nav>
     </header>
     <main>
+      <p id="notice"><%= notice %></p>
       <%= yield %>
     </main>
     <footer>
